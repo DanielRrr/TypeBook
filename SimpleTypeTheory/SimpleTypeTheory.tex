@@ -113,6 +113,23 @@ iii) $M \equiv_{\alpha} N, N \equiv_{\alpha} P \Rightarrow M \equiv_{\alpha} P$
 \end{equation}
 Таким образом, при заданной подстановке, $25$ является главной формой данного терма.
 
+\emph{Примеры} $\beta$-редукции:
+
+i) $(\lambda x. x x)N \rightarrow_{\beta} x x [x := N] \equiv N N$;
+
+ii) $(\lambda x. (\lambda x. x x) f x)N \rightarrow_{\beta} ((\lambda x. x x) f x) [x := N] \equiv ((\lambda x. xx) f N)$;
+
+iii) $(\lambda x.x) N \rightarrow_{\beta} (x) [x := N] \equiv N$;
+
+iv) $(\lambda f. (\lambda g. (\lambda x. f (g x)))) \: M \: N \: P \rightarrow_{\beta} (\lambda g. (\lambda x. f (g x)) \: N \: P \:\: [f := M] \rightarrow_{\beta} (\lambda x. M (g x)) \: P \:\: [g := N] \rightarrow_{\beta} M (N x) [x := P] \equiv M (N P)$;
+
+v) $(\lambda f. (\lambda g. (\lambda x . (f x) (g x)))) \: M \: N \: P \rightarrow_{\beta} (\lambda g. (\lambda x. (f x) (g x))) \: N \: P \:\: [f := M] \rightarrow_{\beta} (\lambda x. (M x) (g x)) \: P \:\: [g := N] \rightarrow_{\beta} (M x) (N x) [x := P] \equiv (M P) (N P)$;
+
+vi) $(\lambda x. (\lambda y. x)) \: M \: N \rightarrow_{\beta} (\lambda y. x) \: N [x := M] \rightarrow_{\beta} M [y := N] \equiv M$;
+
+vii) $(\lambda f. (\lambda x. f(f x))) \: M \: N \rightarrow_{\beta} (\lambda x. f(f x)) \: N [f := M] \rightarrow_{\beta} M (M x) [x := N] \equiv M (M N)$.
+
+
 \section{Комбинаторная логика и ее связь с лямбда-исчислением.}
 \section{Простое типизированное лямбда-исчисление: типизация по Карри и по Черчу.}
 \section{Типизированные комбинаторы.}
